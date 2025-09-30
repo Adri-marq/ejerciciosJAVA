@@ -31,8 +31,8 @@ public class Actividad10corregido {
 			}else if (numero < 10000) {
 				unidades = numero % 10;
 				decenas = numero/10;
-				centenas = numero/100;
-				millares= numero/1000;
+				centenas = (numero/100)%10;
+				millares= (numero/1000)%10;
 				if (unidades == millares && decenas == centenas) {
 					  System.out.println("El número es capicúa.");
 				} else {
