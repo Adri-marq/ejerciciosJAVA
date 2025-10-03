@@ -7,11 +7,11 @@ public class Actividad11 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("¿Que nota has sacado?");
 		double nota = sc.nextDouble();
-		if (nota >= 0 && nota <=4) {
+		if (nota >= 0 && nota <5) {
 			System.out.println(" Tu nota es Insuficiente");
-		} else if (nota == 5) {
+		} else if (nota >= 5 && nota <6) {
 			System.out.println(" Tu nota es Suficiente");
-			} else if (nota == 6) {
+			} else if (nota >=6 && nota<7) {
 				System.out.println(" Tu nota es Bien");
 				} else if (nota >= 7 && nota <= 8) {
 					System.out.println(" Tu nota es Notable");
@@ -20,7 +20,6 @@ public class Actividad11 {
 				} else {
 					System.out.println("No puedes tener esa nota");
 				}
-		
 	}
 
 }
