@@ -62,6 +62,8 @@ public class Actividad16 {
 		} else if ( unidades ==5 ) {
 			System.out.println("quince");
 		}
+	}else if (numero < 20) {
+		System.out.println("dieci"+ unidad);
 	}else if (numero == 20) {
 		System.out.println("veinte");
 	}else if (numero < 30) {
