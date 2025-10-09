@@ -30,7 +30,7 @@ public class Ejercicio2 {
 		System.out.println("la suma de todas las edades es " + sumaedad);
 		System.out.println("la media de todas las edades es " + mediaedad);
 		System.out.println("el numero de alumnos es " + alum);
-		System.out.println("los alumnos de mayor de edad es " + mayoredad);
+		System.out.println("los alumnos de mayor de edad son " + mayoredad);
 
 	}
 

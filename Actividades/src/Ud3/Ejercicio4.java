@@ -11,7 +11,7 @@ public class Ejercicio4 {
 		numerocuenta =1;
 		System.out.println("Escribe un numero");
 		numero = sc.nextInt();
-		while(numerocuenta != numero) {
+		while(numerocuenta != numero || numero < 0) {
 			System.out.println(numerocuenta);
 			numerocuenta++;
 		}
