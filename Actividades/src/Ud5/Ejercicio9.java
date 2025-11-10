@@ -49,8 +49,8 @@ public class Ejercicio9 {
 		acum=0;
 		result=0;
 		
-		for(int i=0;i<media.length;i++) {
-				suma= suma + media[i][alum];
+		for(int i=0;i<media[0].length ;i++) {
+				suma= suma + media[alum][i];
 				acum++;
 				result =suma/acum;
 		}
