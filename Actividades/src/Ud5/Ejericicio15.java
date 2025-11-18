@@ -10,12 +10,14 @@ public class Ejericicio15 {
 		Scanner sc = new Scanner(System.in);
 		int[] tabla;
 		int num,n,impares=0;
+		//creo una tabla le doy su longitud y escribo sus valores
 		System.out.println("como de larga quieres que sea tu tabla");
 		num=sc.nextInt();
 		tabla= new int[num];
 	for(int i=0;i<tabla.length;i++) {
 		System.out.println("dime un numero para la tabla");
 		n=sc.nextInt();
+		//si no es par el valor añadido no se añade y se le suma al contador
 		if(n %2!=0) {
 			impares++;
 			}else {

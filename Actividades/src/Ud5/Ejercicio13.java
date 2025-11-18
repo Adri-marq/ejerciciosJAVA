@@ -7,6 +7,7 @@ public class Ejercicio13 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
+		//creo una tabla le doy una longitud y y un valor a las celdas 
 		int[] tabla;
 		int num;
 		System.out.println("como de larga quieres que sea tu tabla");
@@ -18,6 +19,7 @@ public class Ejercicio13 {
 		}
 	System.out.println(maximo(tabla));
 	}
+	// en otra funcion calculo el numero maximo de la tabla
 public static int maximo(int[] t) {
 	int maximo;
 	maximo=0;
