@@ -16,6 +16,7 @@ public class Ejercicio6 {
 		sb.append(frase);
 		sb.reverse();
 		System.out.println(sb.toString());
+		//segunda opcion sin Stringbuilder
 		for(int i=frase.length()-1;i>-1;i--) {
 			System.out.print(frase.charAt(i));
 		}
