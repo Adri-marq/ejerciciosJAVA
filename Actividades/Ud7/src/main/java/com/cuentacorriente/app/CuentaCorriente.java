@@ -1,6 +1,4 @@
-package Ud7;
-
-import java.util.Scanner;
+package com.cuentacorriente.app;
 
 public class CuentaCorriente {
 //atributos
@@ -8,13 +6,13 @@ private int saldo;
 private int limitedesc;
 public String nombre;
 protected String DNI;
-public  static String banco="bankinter";
+public static String banco="bankinter";
 //contructor
 public CuentaCorriente(String nombre, String DNI) {
 this.nombre=nombre;
 this.DNI=DNI;
 saldo=0;
-limitedesc=-50;
+limitedesc=50;
 
 }
 
@@ -33,11 +31,11 @@ limitedesc=limit;
 //metodos
 public void sacardinero(int dinero) {
 	if(dinero>0) {
-	if(dinero>=(saldo-limitedesc)) {
+	if(dinero<=(saldo+limitedesc)) {
 	if(dinero<=saldo) {
 		saldo=saldo-dinero;
 	}else {
-		limitedesc= saldo-limitedesc+dinero;
+		limitedesc= saldo+limitedesc-dinero;
 		System.out.println("listo, gracias por esperar");
 	}
 	}else {
@@ -57,13 +55,6 @@ System.out.println("DNI: "+ DNI);
 System.out.println("saldo: "+ saldo);
 System.out.println("limite de descubierto: "+ limitedesc);
 System.out.println("banco: "+ banco);
-}
-
-public void nombrebanco() {
-	Scanner sc=new Scanner(System.in);
-	System.out.println("¿a cual banco quieres cambiar?");
-	String banco=sc.nextLine();
-	setBanco(banco);
 }
 //getters and setters
 public int getSaldo() {
