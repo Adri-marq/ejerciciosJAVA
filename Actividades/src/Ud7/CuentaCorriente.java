@@ -14,7 +14,7 @@ public CuentaCorriente(String nombre, String DNI) {
 this.nombre=nombre;
 this.DNI=DNI;
 saldo=0;
-limitedesc=-50;
+limitedesc=50;
 
 }
 
@@ -33,11 +33,11 @@ limitedesc=limit;
 //metodos
 public void sacardinero(int dinero) {
 	if(dinero>0) {
-	if(dinero>=(saldo-limitedesc)) {
+	if(dinero<=(saldo+limitedesc)) {
 	if(dinero<=saldo) {
 		saldo=saldo-dinero;
 	}else {
-		limitedesc= saldo-limitedesc+dinero;
+		limitedesc= saldo+limitedesc-dinero;
 		System.out.println("listo, gracias por esperar");
 	}
 	}else {
@@ -98,6 +98,8 @@ public static String getBanco() {
 public static void setBanco(String banco) {
 	CuentaCorriente.banco = banco;
 }
+
+
 }
 
 
