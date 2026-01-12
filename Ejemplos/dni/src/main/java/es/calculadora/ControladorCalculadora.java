@@ -30,13 +30,13 @@ resultado= num1 * num2;
 return resultado;
 }
 
-public double dividir() {
+public double dividir()throws Exception {
 double resultado;
 try {
 resultado= num1 / num2;
 return resultado;
 }catch(Exception ex) {
-throw new IllegalArgumentException("no es posible dividir con 0");
+throw new Exception("no es posible dividir con 0");
 }
 }
 
