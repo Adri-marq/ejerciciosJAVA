@@ -8,7 +8,7 @@ private int saldo;
 private int limitedesc;
 public String nombre;
 protected String DNI;
-public  static String banco="bankinter";
+public  static String banco=" ";
 //contructor
 public CuentaCorriente(String nombre, String DNI) {
 this.nombre=nombre;
@@ -38,7 +38,7 @@ public void sacardinero(int dinero) {
 		saldo=saldo-dinero;
 	}else {
 		limitedesc= saldo+limitedesc-dinero;
-		System.out.println("listo, gracias por esperar");
+		System.out.println("listo, gracias por sacar dinero");
 	}
 	}else {
 		System.out.println("no ha sido posible sacar dinero");
@@ -61,9 +61,18 @@ System.out.println("banco: "+ banco);
 
 public void nombrebanco() {
 	Scanner sc=new Scanner(System.in);
+	System.out.println("¿tienes un banco? (si/no)");
+	String banc = sc.next();
+	if (banc == "si") {
 	System.out.println("¿a cual banco quieres cambiar?");
-	String banco=sc.nextLine();
-	setBanco(banco);
+	 banco=sc.nextLine();
+	}else if (banc == "no") {
+	System.out.println("¿a cual banco quieres cambiar?");
+	banco=sc.nextLine();		
+	} else {
+		System.out.println("Error");
+	}
+	
 }
 //getters and setters
 public int getSaldo() {
