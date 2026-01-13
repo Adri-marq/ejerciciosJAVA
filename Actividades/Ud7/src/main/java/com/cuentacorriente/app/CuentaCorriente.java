@@ -6,13 +6,13 @@ private int saldo;
 private int limitedesc;
 public String nombre;
 protected String DNI;
-public static String banco="bankinter";
+public static String banco="";
 //contructor
 public CuentaCorriente(String nombre, String DNI) {
 this.nombre=nombre;
 this.DNI=DNI;
 saldo=0;
-limitedesc=50;
+limitedesc=-50;
 
 }
 
@@ -20,23 +20,24 @@ public CuentaCorriente(int saldoini) {
 this.nombre="";
 this.DNI="";
 saldo=saldoini;
-limitedesc=0;
+limitedesc=-(0);
 }
 public CuentaCorriente(String DNI,int saldoini,int limit) {
 this.nombre="";
 this.DNI=DNI;
 saldo=saldoini;
-limitedesc=limit;
+limitedesc=-(limit);
 }
 //metodos
 public void sacardinero(int dinero) {
 	if(dinero>0) {
-	if(dinero<=(saldo+limitedesc)) {
+	if(dinero>=(saldo+limitedesc)) {
 	if(dinero<=saldo) {
 		saldo=saldo-dinero;
 	}else {
-		limitedesc= saldo+limitedesc-dinero;
-		System.out.println("listo, gracias por esperar");
+		limitedesc= (-saldo)+limitedesc+dinero;
+		saldo=0;
+		System.out.println("listo, gracias por sacar dinero");
 	}
 	}else {
 		System.out.println("no ha sido posible sacar dinero");

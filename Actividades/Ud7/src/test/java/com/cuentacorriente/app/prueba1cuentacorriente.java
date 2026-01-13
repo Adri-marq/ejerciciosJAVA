@@ -10,6 +10,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class prueba1cuentacorriente {
+	
+	CuentaCorriente cuenta;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -23,7 +25,7 @@ class prueba1cuentacorriente {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		CuentaCorriente cuenta = new CuentaCorriente(" "," ");
+		cuenta = new CuentaCorriente(" "," ");
 	}
 
 	@AfterEach
@@ -33,21 +35,39 @@ class prueba1cuentacorriente {
 	@Test
 	@DisplayName("1.- crear la cuenta")
 	void testcrearcuenta() {
-		CuentaCorriente cuenta = new CuentaCorriente("adri","125433435D");
+		 cuenta = new CuentaCorriente("adri","125433435D");
 		
-		int limiteesp = 50;
-		
+		int limiteesp = -50;
+		int saldoesp = 0;
 		assertEquals(limiteesp,cuenta.getLimitedesc(), "el limite es -50");
+		assertEquals(saldoesp,cuenta.getSaldo(), "el saldo es 25");
 	}
 	
 	@Test
 	@DisplayName("2.- crear la cuenta")
 	void testsacardinero() {
-		CuentaCorriente cuenta = new CuentaCorriente("adri","125433435D");
+		 cuenta = new CuentaCorriente("adri","125433435D");
 		cuenta.sacardinero(25);
-		int limiteesp = 25;
+		int limiteesp = -25;
 		
-		assertEquals(limiteesp,cuenta.getLimitedesc(), "el limite es -50");
+		assertEquals(limiteesp,cuenta.getLimitedesc(), "el limite es -25");
 	}
-
+	
+	@Test
+	@DisplayName("3.- crear la cuenta")
+	void testingresardinero() {
+		 cuenta = new CuentaCorriente("adri","125433435D");
+		cuenta.ingresardinero(25);
+		int dineroesp = 25;
+		
+		assertEquals(dineroesp,cuenta.getSaldo(), "el saldo es 25");
+	}
+	
+	@Test
+	@DisplayName("4.- crear la cuenta")
+	void testmostrarinfo() {
+		 cuenta = new CuentaCorriente("adri","125433435D");
+		cuenta.mostrarinfo();
+		
+	}
 }

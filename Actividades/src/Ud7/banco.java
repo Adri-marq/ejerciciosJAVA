@@ -2,13 +2,23 @@ package Ud7;
 
 
 public class banco {
-private String banco;
-public int capital;
-public String direccioncentral;
+	
+	 private final String nombre;          // no modificable
+	    private double capital;
+	    private String direccionCentral;
 
-public banco(String banco) {
-this.banco=banco;
-capital=5200000;
-}
+	    // Constructor con capital por defecto
+	    public banco(String nombre) {
+	        this.nombre = nombre;
+	        this.capital = 5200000;
+	    }
 
-}
+	    // Constructor completo
+	    public banco(String nombre, double capital, String direccionCentral) {
+	        this.nombre = nombre;
+	        this.capital = capital;
+	        this.direccionCentral = direccionCentral;
+	    }
+	}	
+
+   
