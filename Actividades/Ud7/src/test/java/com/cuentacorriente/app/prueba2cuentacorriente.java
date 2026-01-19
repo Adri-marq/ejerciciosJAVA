@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class prueba2cuentacorriente {
 
 	CuentaCorriente cuenta;
-	
+	banco banco1;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	System.out.println("inicio de la prueba");
@@ -27,6 +27,9 @@ class prueba2cuentacorriente {
 	void setUp() throws Exception {
 		cuenta = new CuentaCorriente(0);
 		cuenta = new CuentaCorriente(" ",0,0);
+		cuenta = new CuentaCorriente(" "," ");
+		cuenta = new CuentaCorriente(" "," ",bankinter);
+		
 	}
 
 	@AfterEach
@@ -41,7 +44,7 @@ class prueba2cuentacorriente {
 	}
 	
 	@Test
-	@DisplayName("1.- constructor CuentaCorriente")
+	@DisplayName("2.- constructor CuentaCorriente")
 	void testsaldoinilimitedescDNI() {
 		cuenta = new CuentaCorriente("1235435D",10,45);
 		cuenta.mostrarinfo();
