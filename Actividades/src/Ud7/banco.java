@@ -16,6 +16,10 @@ public class banco {
 	    public String getNombre() {
 			return nombre;
 		}
+	    
+	    public String toString() {
+	        return nombre;
+	    }
 
 	}	
 

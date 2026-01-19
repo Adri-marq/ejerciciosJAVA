@@ -38,6 +38,13 @@ public CuentaCorriente(String nombre, String DNI, banco banco) {
     this.banco = banco;
 }
 
+public CuentaCorriente(String nombreBanco, banco banco) {
+this.nbanco = nombreBanco;
+this.banco=banco;
+
+
+}
+
 //metodos
 public void sacardinero(int dinero) {
 	if(dinero<0) {

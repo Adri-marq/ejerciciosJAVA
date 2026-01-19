@@ -17,6 +17,10 @@ public class banco {
 			return nombre;
 		}
 
-	}	
+	    public String toString() {
+	        return nombre;
+	    }
+	
+}	
 
    
