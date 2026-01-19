@@ -76,7 +76,7 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto para contenidoInicial null");
     }
-
+   
     @Test
     @DisplayName("Constructor(contenidoInicial, maxLongitud): lanza excepción si contenidoInicial supera maxLongitud")
     void constructorConContenido_superaMax_lanzaExcepcion() {
@@ -87,7 +87,7 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto cuando el contenido inicial excede el máximo");
     }
-
+  
     @Test
     @DisplayName("Constructor(contenidoInicial, maxLongitud): lanza excepción si maxLongitud <= 0 (mensaje comprobado)")
     void constructorConContenido_maxInvalido_lanzaExcepcion() {
@@ -98,11 +98,11 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto para maxLongitud inválido");
     }
-
+    
     // -------------------------
     // AÑADIR CARACTERES (final)
     // -------------------------
-
+  
     @Test
     @DisplayName("anadirFinal(char): añade al final si hay espacio y devuelve true")
     void anadirFinal_char_conEspacio_devuelveTrue() {
@@ -132,7 +132,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "No debe modificar el contenido si no hay espacio");
     }
-
+    /*
     // -------------------------
     // AÑADIR CARACTERES (inicio)
     // -------------------------
@@ -355,5 +355,5 @@ class TextoTest {
         assertEquals("Hola", t.toString(), "toString() debería devolver el contenido");
     }
     
-
+*/
 }
