@@ -132,7 +132,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "No debe modificar el contenido si no hay espacio");
     }
-    /*
+    
     // -------------------------
     // AÑADIR CARACTERES (inicio)
     // -------------------------
@@ -150,7 +150,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "Debe anteponer el carácter al contenido existente");
     }
-
+    
     @Test
     @DisplayName("anadirInicio(char): si está lleno no modifica y devuelve false")
     void anadirInicio_char_sinEspacio_devuelveFalse() {
@@ -164,7 +164,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "No debe modificar el contenido si no hay espacio");
     }
-
+  
     // -------------------------
     // AÑADIR CADENA (final)
     // -------------------------
@@ -186,7 +186,7 @@ class TextoTest {
         int longitud = t.longitud();
         assertEquals(longitudEsperada, longitud, "La longitud debe coincidir con el máximo tras añadir");
     }
-
+    
     @Test
     @DisplayName("anadirFinal(String): si no cabe NO modifica y devuelve false")
     void anadirFinal_string_noCabe_noModifica_devuelveFalse() {
@@ -226,7 +226,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "El contenido no debe cambiar al añadir una cadena vacía");
     }
-
+    
     // -------------------------
     // AÑADIR CADENA (inicio)
     // -------------------------
@@ -244,7 +244,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "Debe anteponer la cadena al contenido correctamente");
     }
-
+   
     @Test
     @DisplayName("anadirInicio(String): si no cabe NO modifica y devuelve false")
     void anadirInicio_string_noCabe_noModifica_devuelveFalse() {
@@ -270,7 +270,7 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto para cadena null");
     }
-
+  
     @Test
     @DisplayName("anadirInicio(String): añadir \"\" no cambia contenido y devuelve true")
     void anadirInicio_string_vacia_noCambia_devuelveTrue() {
@@ -296,7 +296,7 @@ class TextoTest {
         int resultado = texto.contarVocales();
         assertEquals(resultadoEsperado, resultado, "El número de vocales en un texto vacío debe ser 0");
     }
-
+    
     @Test
     @DisplayName("contarVocales(): cuenta vocales mayúsculas y minúsculas (AEIOUaeiou)")
     void contarVocales_cuentaMayusMinus() {
@@ -306,7 +306,7 @@ class TextoTest {
         int resultado = t.contarVocales();
         assertEquals(resultadoEsperado, resultado, "Debe contar vocales ignorando mayúsculas/minúsculas y símbolos");
     }
-
+   
     @Test
     @DisplayName("contarVocales(): no cuenta letras no vocales ni signos")
     void contarVocales_noCuentaConsonantesNiSignos() {
@@ -316,7 +316,7 @@ class TextoTest {
         int resultado = t.contarVocales();
         assertEquals(resultadoEsperado, resultado, "No debe contar consonantes ni signos como vocales");
     }
-
+    
     // -------------------------
     // CONSISTENCIA DE MÉTODOS
     // -------------------------
@@ -347,13 +347,13 @@ class TextoTest {
         String contenidoTrasFallo = t.getContenido();
         assertEquals(contenidoEsperadoTrasFallo, contenidoTrasFallo, "No debe cambiar el contenido si no hay espacio");
     }
-
+    
     @Test
     @DisplayName("toString(): devuelve el contenido")
     void toString_devuelveContenido() {
         Texto t = new Texto("Hola", 10);
         assertEquals("Hola", t.toString(), "toString() debería devolver el contenido");
     }
-    
+    /*
 */
 }

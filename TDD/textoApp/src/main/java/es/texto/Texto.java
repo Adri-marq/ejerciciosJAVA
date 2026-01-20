@@ -48,7 +48,7 @@ public class Texto {
 	}
 
 	public boolean anadirFinal(char c) {
-		if(contenido.length()<longmax) {
+		if(contenido.length()+1<=longmax) {
 		contenido = contenido+c;
 		return true;
 		}else {
@@ -57,8 +57,55 @@ public class Texto {
 	}
 
 	public boolean anadirInicio(char c) {
+		if(contenido.length()+1<=longmax) {
+			contenido = c+ contenido;
+			return true;
+			}else {
+				return false;
 		
-		return false;
+	}
 	}
 
+	public boolean anadirFinal(String string) {
+		if(string == null)
+			throw new IllegalArgumentException("cadena no puede ser null");
+		if((contenido.length()+string.length())<=longmax) {
+			contenido = contenido+string;
+			return true;
+			}else {
+				return false;
+			}
+	}
+
+	public boolean anadirInicio(String string) {
+		if(string == null)
+			throw new IllegalArgumentException("cadena no puede ser null");
+		if((contenido.length()+string.length())<=longmax) {
+			contenido =string+contenido;
+			return true;
+			}else {
+				return false;
+			}
+	}
+
+	public int contarVocales() {
+		if (contenido.length()>0) {
+			int contador=0;
+			String vocales ="AEIOUaeiou";
+			for(int i =0;i<contenido.length();i++) {
+				for(int j =0;j<vocales.length();j++) {
+					if(contenido.charAt(i)==vocales.charAt(j)) {
+					contador++;	
+					}
+				}
+			
+			}
+			return contador;
+		}else {
+			return contenido.length();
+		}
+	}
+	public String toString() {
+		return contenido;
+	}
 }
