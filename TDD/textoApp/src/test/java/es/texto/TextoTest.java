@@ -354,6 +354,4 @@ class TextoTest {
         Texto t = new Texto("Hola", 10);
         assertEquals("Hola", t.toString(), "toString() debería devolver el contenido");
     }
-    /*
-*/
 }

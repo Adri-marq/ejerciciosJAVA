@@ -11,6 +11,7 @@ public class pruebaFM {
 	fm.down();
 	fm.display();
 	fm.up();
+	fm.up();
 	fm.display();
 	fm.down();
 	fm.display();
