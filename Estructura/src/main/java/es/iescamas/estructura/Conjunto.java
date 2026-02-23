@@ -1,5 +1,7 @@
 package es.iescamas.estructura;
 
+import java.util.NoSuchElementException;
+
 public class Conjunto extends ConjuntoArray{
 
 	public Conjunto() {
@@ -40,6 +42,8 @@ public class Conjunto extends ConjuntoArray{
 	}
 	
 	public int minimo() {
+		if(this.numeroElementos()==0)
+			throw new NoSuchElementException("Conjunto vacio");
 	int min=get(0);
 	for(int i=0;i<size();i++) {
 		if(get(i)<min) {
@@ -50,6 +54,8 @@ public class Conjunto extends ConjuntoArray{
 	}
 	
 	public int maximo() {
+		if(this.numeroElementos()==0)
+			throw new NoSuchElementException("Conjunto vacio");
 		int max=get(0);
 		for(int i=0;i<size();i++) {
 			if(get(i)>max) {
@@ -60,6 +66,9 @@ public class Conjunto extends ConjuntoArray{
 		}
 	
 	public double media() {
+		if(this.numeroElementos()==0)
+			throw new NoSuchElementException("Conjunto vacio");
+		
 		double media=0;
 		for(int i=0;i<size();i++) {
 				media+=get(i);

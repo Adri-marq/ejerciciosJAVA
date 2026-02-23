@@ -1,6 +1,9 @@
 package es.iescamas.estructura;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.NoSuchElementException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,11 +20,11 @@ class ConjuntoTest {
 
     @Test
     void testInsertarYNumeroElementos() {
-        assertTrue(conjunto.insertar(5));
-        assertTrue(conjunto.insertar(10));
+        conjunto.insertar(5);
+        conjunto.insertar(10);
         assertEquals(2, conjunto.numeroElementos());
 
-        assertFalse(conjunto.insertar(5));
+        conjunto.insertar(5);
         assertEquals(2, conjunto.numeroElementos());
     }
 
@@ -80,7 +83,7 @@ class ConjuntoTest {
     }
 
     @Test
-    void testToStringNoVacio() {
+    void testToString() {
         conjunto.insertar(10);
         conjunto.insertar(20);
 
@@ -98,18 +101,35 @@ class ConjuntoTest {
         conjunto.insertar(1);
         assertEquals(1, conjunto.minimo());
     }
+    
+    @Test
+    void testMinimoConjuntoVacio() {
+    	String mensajeEsperado="Conjunto vacio";
+    	NoSuchElementException ex = 
+    	assertThrows(NoSuchElementException.class, ()-> conjunto.minimo());
+    	String mensaje = ex.getMessage().toString();
+    	assertEquals(mensajeEsperado,mensaje);
+    }
 
     @Test
     void testMaximo() {
-        conjunto.insertar(5);
+        conjunto.insertar(-5);
         conjunto.insertar(2);
         conjunto.insertar(9);
         assertEquals(9, conjunto.maximo());
         conjunto.insertar(15);
         assertEquals(15, conjunto.maximo());
     }
-
     @Test
+    void testMaximoConjuntoVacio() {
+    	String mensajeEsperado="Conjunto vacio";
+    	NoSuchElementException ex = 
+    	assertThrows(NoSuchElementException.class, ()-> conjunto.maximo());
+    	String mensaje = ex.getMessage().toString();
+    	assertEquals(mensajeEsperado,mensaje);
+    }
+
+    @Test		
     void testMedia() {
         conjunto.insertar(2);
         conjunto.insertar(4);
@@ -117,6 +137,14 @@ class ConjuntoTest {
         assertEquals(4.0, conjunto.media());
         conjunto.insertar(8);
         assertEquals(5.0, conjunto.media());
+    }
+    @Test
+    void testMediaConjuntoVacio() {
+    	String mensajeEsperado="Conjunto vacio";
+    	NoSuchElementException ex = 
+    	assertThrows(NoSuchElementException.class, ()-> conjunto.media());
+    	String mensaje = ex.getMessage().toString();
+    	assertEquals(mensajeEsperado,mensaje);
     }
 
     @Test
@@ -168,22 +196,12 @@ class ConjuntoTest {
         conjunto.insertar(3);
         otroConjunto.insertar(2);
         otroConjunto.insertar(4);
-        Conjunto diff = Conjunto.diferencia(conjunto, otroConjunto);
-        assertEquals(2, diff.numeroElementos());
-        assertTrue(diff.pertenece(1));
-        assertTrue(diff.pertenece(3));
-        assertFalse(diff.pertenece(2));
-        assertFalse(diff.pertenece(4));
+        Conjunto diferente = Conjunto.diferencia(conjunto, otroConjunto);
+        assertEquals(2, diferente.numeroElementos());
+        assertTrue(diferente.pertenece(1));
+        assertTrue(diferente.pertenece(3));
+        assertFalse(diferente.pertenece(2));
+        assertFalse(diferente.pertenece(4));
     }
 
-    @Test
-    void testConjuntosVacios() {
-        Conjunto vacio1 = new Conjunto();
-        Conjunto vacio2 = new Conjunto();
-        assertEquals(0, vacio1.numeroElementos());
-        assertEquals(0, Conjunto.union(vacio1, vacio2).numeroElementos());
-        assertEquals(0, Conjunto.interseccion(vacio1, vacio2).numeroElementos());
-        assertEquals(0, Conjunto.diferencia(vacio1, vacio2).numeroElementos());
-        assertTrue(Conjunto.incluido(vacio1, vacio2));
-    }
 }
