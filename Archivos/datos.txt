@@ -1,3 +1,1 @@
-java
-Archibos de texto
-daw y dam
+nombre: adrian edad: 20
